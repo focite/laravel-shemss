@@ -1,0 +1,26 @@
+{
+    "name": "shesp/php-sdk",
+    "description": "Shanghai Environmental Supervision Platform",
+    "license": "Apache-2.0",
+    "type": "library",
+    "authors": [
+        {
+            "name": "wanganlin",
+            "email": "inbox@wanganlin.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0.2",
+        "guzzlehttp/guzzle": "^7.4",
+        "illuminate/support": "^9.21"
+    },
+    "autoload": {
+        "psr-4": {
+            "Esp\\": "src/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev"
+}
