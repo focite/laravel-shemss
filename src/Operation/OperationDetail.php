@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace Esp\Operation;
 
+use Esp\Kernel\Provider;
+
 /**
  * Class OperationDetail
  * @package Esp\Operation
  */
-class OperationDetail
+class OperationDetail extends Provider
 {
 
     /**

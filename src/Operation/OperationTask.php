@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 namespace Esp\Operation;
 
+use Esp\Kernel\Provider;
+
 /**
  * 3.5.1 运维任务申请
  * Class OperationTask
  * @package Esp\Operation
  */
-class OperationTask
+class OperationTask extends Provider
 {
     /**
      * 运维任务基础信息（新增/编辑）

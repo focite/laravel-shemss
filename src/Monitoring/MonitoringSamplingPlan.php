@@ -2,12 +2,14 @@
 
 namespace Esp\Monitoring;
 
+use Esp\Kernel\Provider;
+
 /**
  * 3.4.3 采样计划
  * Class MonitoringSamplingPlan
  * @package Esp\Monitoring
  */
-class MonitoringSamplingPlan
+class MonitoringSamplingPlan extends Provider
 {
     /**
      * 采样计划（计划清单列表）

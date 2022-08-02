@@ -2,12 +2,14 @@
 
 namespace Esp\Report;
 
+use Esp\Kernel\Provider;
+
 /**
  * 3.4.5 数据报告
  * Class Report
  * @package Esp\Report
  */
-class Report
+class Report extends Provider
 {
     /**
      * 数据报告（生成系统编号）

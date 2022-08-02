@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace Esp\Monitoring;
 
+use Esp\Kernel\Provider;
+
 /**
  * Class MonitoringTask
  * @package Esp\Monitoring
  */
-class MonitoringTask
+class MonitoringTask extends Provider
 {
     /**
      * 委托任务申请（添加/编辑）

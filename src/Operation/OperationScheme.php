@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace Esp\Operation;
 
+use Esp\Kernel\Provider;
+
 /**
  * Class OperationScheme
  * @package Esp\Operation
  */
-class OperationScheme
+class OperationScheme extends Provider
 {
     /**
      * 运维点位列表

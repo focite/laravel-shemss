@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace Esp\Operation;
 
+use Esp\Kernel\Provider;
+
 /**
  * Class OpenationTaskType
  * @package Esp\Operation
  */
-class OpenationTaskType
+class OpenationTaskType extends Provider
 {
     /**
      * 运维任务类别

@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace Esp\Contract;
 
+use Esp\Kernel\Provider;
+
 /**
  * Class Contract
  * @package Esp\Contract
  */
-class Contract
+class Contract extends Provider
 {
     /**
      * 合同基本信息（添加/新增）

@@ -4,11 +4,13 @@ declare(strict_types=1);
 
 namespace Esp\Monitoring;
 
+use Esp\Kernel\Provider;
+
 /**
  * Class MonitoringSamplingMethod
  * @package Esp\Monitoring
  */
-class MonitoringSamplingMethod
+class MonitoringSamplingMethod extends Provider
 {
     /**
      * 采样方法

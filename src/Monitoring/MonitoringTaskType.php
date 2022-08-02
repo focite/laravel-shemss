@@ -4,11 +4,15 @@ declare(strict_types=1);
 
 namespace Esp\Monitoring;
 
+use Esp\Kernel\Provider;
+use Esp\Support\XML;
+use Exception;
+
 /**
  * Class MonitoringTaskType
  * @package Esp\Monitoring
  */
-class MonitoringTaskType
+class MonitoringTaskType extends Provider
 {
     /**
      * 监测任务类别
@@ -23,10 +27,16 @@ class MonitoringTaskType
      *
      * Items 列表
      * Item 类别名称
-     * @return void
+     * @return array
+     * @throws Exception
      */
-    public function M_MonitoringTaskType()
+    public function M_MonitoringTaskType(): array
     {
-
+        $response = $this->soap->M_MonitoringTaskType();
+        $data = XML::parse($response->M_MonitoringTaskTypeResult->any);
+        if (isset($data['succes']) && $data['succes'] === 'False') {
+            throw new Exception($data['message']);
+        }
+        return $data['Item'];
     }
 }

@@ -2,12 +2,14 @@
 
 namespace Esp\Monitoring;
 
+use Esp\Kernel\Provider;
+
 /**
  * 3.4.2 方案编制
  * Class MonitoringTaskPlan
  * @package Esp\Monitoring
  */
-class MonitoringTaskPlan
+class MonitoringTaskPlan extends Provider
 {
     /**
      * 方案编制（新增）(单个任务执行)
