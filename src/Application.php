@@ -21,13 +21,9 @@ use Esp\Operation\OperationScheme;
 class Application
 {
     /**
-     * 接口地址
-     * @var array
+     * @var bool 调试模式
      */
-    public static array $webService = [
-        'dev' => 'http://218.242.55.138:10077/WebService1/WebService.asmx',
-        'prod' => 'http://218.242.55.138:10001/WebService1/WebService.asmx',
-    ];
+    private bool $debug;
 
     /**
      * @var string 用户名
@@ -42,9 +38,11 @@ class Application
     /**
      * @param string $username 用户名
      * @param string $password 密码
+     * @param bool $debug 调试模式
      */
-    public function __construct(string $username, string $password)
+    public function __construct(string $username, string $password, bool $debug = true)
     {
+        $this->debug = $debug;
         $this->username = trim($username);
         $this->password = trim($password);
     }
@@ -55,7 +53,7 @@ class Application
      */
     public function entrustingParty(): EntrustingParty
     {
-        return new EntrustingParty($this->auth());
+        return new EntrustingParty($this->config());
     }
 
     /**
@@ -64,7 +62,7 @@ class Application
      */
     public function region(): Region
     {
-        return new Region($this->auth());
+        return new Region($this->config());
     }
 
     /**
@@ -73,7 +71,7 @@ class Application
      */
     public function worker(): Worker
     {
-        return new Worker($this->auth());
+        return new Worker($this->config());
     }
 
     /**
@@ -82,7 +80,7 @@ class Application
      */
     public function device(): Device
     {
-        return new Device($this->auth());
+        return new Device($this->config());
     }
 
     /**
@@ -91,7 +89,7 @@ class Application
      */
     public function monitoringTaskType(): MonitoringTaskType
     {
-        return new MonitoringTaskType($this->auth());
+        return new MonitoringTaskType($this->config());
     }
 
     /**
@@ -100,7 +98,7 @@ class Application
      */
     public function monitoringAnalysisMethod(): MonitoringAnalysisMethod
     {
-        return new MonitoringAnalysisMethod($this->auth());
+        return new MonitoringAnalysisMethod($this->config());
     }
 
     /**
@@ -109,7 +107,7 @@ class Application
      */
     public function monitoringSamplingMethod(): MonitoringSamplingMethod
     {
-        return new MonitoringSamplingMethod($this->auth());
+        return new MonitoringSamplingMethod($this->config());
     }
 
     /**
@@ -118,7 +116,7 @@ class Application
      */
     public function monitoringTask(): MonitoringTask
     {
-        return new MonitoringTask($this->auth());
+        return new MonitoringTask($this->config());
     }
 
     /**
@@ -127,7 +125,7 @@ class Application
      */
     public function openationTaskType(): OpenationTaskType
     {
-        return new OpenationTaskType($this->auth());
+        return new OpenationTaskType($this->config());
     }
 
     /**
@@ -136,7 +134,7 @@ class Application
      */
     public function operationScheme(): OperationScheme
     {
-        return new OperationScheme($this->auth());
+        return new OperationScheme($this->config());
     }
 
     /**
@@ -145,7 +143,7 @@ class Application
      */
     public function operationDetail(): OperationDetail
     {
-        return new OperationDetail($this->auth());
+        return new OperationDetail($this->config());
     }
 
     /**
@@ -154,7 +152,7 @@ class Application
      */
     public function attachment(): Attachment
     {
-        return new Attachment($this->auth());
+        return new Attachment($this->config());
     }
 
     /**
@@ -163,18 +161,21 @@ class Application
      */
     public function contract(): Contract
     {
-        return new Contract($this->auth());
+        return new Contract($this->config());
     }
 
 
     /**
      * @return array
      */
-    private function auth(): array
+    private function config(): array
     {
         return [
-            'username' => $this->username,
-            'password' => $this->password,
+            'env' => $this->debug ? 'dev' : 'prod',
+            'auth' => [
+                'UserName' => $this->username,
+                'PassWord' => $this->password,
+            ]
         ];
     }
 }
