@@ -8,6 +8,10 @@ use SoapClient;
 use SoapFault;
 use SoapHeader;
 
+/**
+ * Class Soap
+ * @package Esp\Kernel
+ */
 class Soap
 {
     /**

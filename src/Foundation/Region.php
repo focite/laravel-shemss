@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Esp\Foundation;
 
-use Esp\Kernel\Soap;
+use Esp\Kernel\Provider;
 use Esp\Support\XML;
 use Exception;
 
@@ -12,21 +12,8 @@ use Exception;
  * Class Region
  * @package Esp\Foundation
  */
-class Region
+class Region extends Provider
 {
-    /**
-     * @var array
-     */
-    private array $config;
-
-    /**
-     * @param array $config
-     */
-    public function __construct(array $config)
-    {
-        $this->config = $config;
-    }
-
     /**
      * 行政区域字典
      * @return array
@@ -34,11 +21,11 @@ class Region
      */
     public function Z_CityInfo(): array
     {
-        $z_CityInfo = (new Soap())->client($this->config)->Z_CityInfo();
-        $response = XML::parse($z_CityInfo->Z_CityInfoResult->any);
-        if (isset($response['succes']) && $response['succes'] === 'False') {
-            throw new Exception($response['message']);
+        $response = $this->soap->Z_CityInfo();
+        $data = XML::parse($response->Z_CityInfoResult->any);
+        if (isset($data['succes']) && $data['succes'] === 'False') {
+            throw new Exception($data['message']);
         }
-        return $response['Item'];
+        return $data['Item'];
     }
 }
