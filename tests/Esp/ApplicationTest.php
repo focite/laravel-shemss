@@ -330,9 +330,13 @@ class ApplicationTest extends TestCase
         $this->assertIsBool(0);
     }
 
+    /**
+     * @throws \Exception
+     */
     public function testC_PartyABasicDataList()
     {
-        $this->assertIsBool(0);
+        $data = $this->app->C_PartyABasicDataList();
+        $this->assertIsArray($data);
     }
 
     public function testM_DelOperationTaskReport()
