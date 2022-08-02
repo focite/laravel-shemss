@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Esp\Operation;
 
 use Esp\Kernel\Provider;
+use Esp\Support\XML;
+use Exception;
 
 /**
  * Class OpenationTaskType
@@ -28,10 +30,16 @@ class OpenationTaskType extends Provider
      * ID 类别 ID
      * NAME 类别名称
      *
-     * @return void
+     * @return array
+     * @throws Exception
      */
-    public function M_OpenationTaskType()
+    public function M_OpenationTaskType(): array
     {
-
+        $response = $this->soap->M_OpenationTaskType();
+        $data = XML::parse($response->M_OpenationTaskTypeResult->any);
+        if (isset($data['succes']) && $data['succes'] === 'False') {
+            throw new Exception($data['message']);
+        }
+        return $data['Item'];
     }
 }

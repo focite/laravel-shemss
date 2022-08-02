@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Esp\Operation;
 
 use Esp\Kernel\Provider;
+use Exception;
 
 /**
  * Class OperationScheme
@@ -35,7 +36,8 @@ class OperationScheme extends Provider
      * LATITUDE 维度
      * LONGITUDE 经度
      *
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function M_GetOperationSchemeList()
     {

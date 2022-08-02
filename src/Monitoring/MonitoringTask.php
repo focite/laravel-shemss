@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Esp\Monitoring;
 
 use Esp\Kernel\Provider;
+use Exception;
 
 /**
  * Class MonitoringTask
@@ -14,7 +15,8 @@ class MonitoringTask extends Provider
 {
     /**
      * 委托任务申请（添加/编辑）
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function M_InsertMonitoringTask()
     {
@@ -23,7 +25,8 @@ class MonitoringTask extends Provider
 
     /**
      * 监测任务信息（进行中）
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function M_GetALLMonitorTask()
     {
@@ -32,7 +35,8 @@ class MonitoringTask extends Provider
 
     /**
      * 监测任务信息（已完结）
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function M_GetDoneMonitorTask()
     {
@@ -41,7 +45,8 @@ class MonitoringTask extends Provider
 
     /**
      * 监测任务（方案信息）
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function M_GetMonitorTaskSchemeByMTID()
     {
@@ -50,7 +55,8 @@ class MonitoringTask extends Provider
 
     /**
      * 监测任务（检测报告）列表
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function M_GetUReportList()
     {
@@ -59,7 +65,8 @@ class MonitoringTask extends Provider
 
     /**
      * 监测任务（补传申请）列表
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function M_GetReportApply()
     {

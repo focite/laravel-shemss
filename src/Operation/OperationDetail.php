@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Esp\Operation;
 
 use Esp\Kernel\Provider;
+use Exception;
 
 /**
  * Class OperationDetail
@@ -28,7 +29,8 @@ class OperationDetail extends Provider
      * CYCLE 周期类型
      * DETAILNAME 运维内容
      *
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function M_GetOperationDetailList()
     {

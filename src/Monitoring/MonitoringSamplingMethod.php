@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Esp\Monitoring;
 
 use Esp\Kernel\Provider;
+use Exception;
 
 /**
  * Class MonitoringSamplingMethod
@@ -25,7 +26,8 @@ class MonitoringSamplingMethod extends Provider
      * ID 采样方法 ID
      * NAME 采样方法名称
      *
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function M_MonitoringSamplingMethod()
     {

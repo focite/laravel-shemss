@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Esp\Operation;
 
 use Esp\Kernel\Provider;
+use Exception;
 
 /**
  * 3.5.1 运维任务申请
@@ -15,7 +16,8 @@ class OperationTask extends Provider
 {
     /**
      * 运维任务基础信息（新增/编辑）
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function M_InsertOperationTask()
     {
@@ -24,7 +26,8 @@ class OperationTask extends Provider
 
     /**
      * 运维任务点位（新增）
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function M_InsertOperationTaskScheme()
     {
@@ -33,7 +36,8 @@ class OperationTask extends Provider
 
     /**
      * 运维任务人员（新增）
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function M_InsertOperationTaskWorkers()
     {
@@ -42,7 +46,8 @@ class OperationTask extends Provider
 
     /**
      * 运维任务设备（新增）
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function M_InsertOperationTaskDevices()
     {
@@ -51,7 +56,8 @@ class OperationTask extends Provider
 
     /**
      * 运维任务计划（新增）
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function M_InsertOperationTaskPlan()
     {
@@ -60,7 +66,8 @@ class OperationTask extends Provider
 
     /**
      * 运维任务提交
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function M_SubmitOperationTask()
     {
@@ -69,7 +76,8 @@ class OperationTask extends Provider
 
     /**
      * 运维记录上传
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function M_InsertOperationTaskPlanLog()
     {
@@ -78,7 +86,8 @@ class OperationTask extends Provider
 
     /**
      * 运维报告（新增/编辑）
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function M_AddOperationTaskReport()
     {
@@ -87,7 +96,8 @@ class OperationTask extends Provider
 
     /**
      * 运维报告（删除）
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function M_DelOperationTaskReport()
     {
@@ -96,7 +106,8 @@ class OperationTask extends Provider
 
     /**
      * 运维报告（完结）
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function M_OperationTaskEnd()
     {
@@ -105,7 +116,8 @@ class OperationTask extends Provider
 
     /**
      * 运维报告（异常中止）
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function M_OperationTaskAbortEnd()
     {
@@ -114,7 +126,8 @@ class OperationTask extends Provider
 
     /**
      * 运维任务信息列表（进行中）
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function M_GetALLOperationTask()
     {
@@ -123,7 +136,8 @@ class OperationTask extends Provider
 
     /**
      * 运维任务信息（进行中）
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function M_GetOperationTaskByID()
     {
@@ -132,7 +146,8 @@ class OperationTask extends Provider
 
     /**
      * 运维任务计划周期列表（进行中）
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function M_GetOperationTaskPlanList()
     {
@@ -141,7 +156,8 @@ class OperationTask extends Provider
 
     /**
      * 运维任务信息列表（已完结）
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function M_GetOperationTaskDone()
     {

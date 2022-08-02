@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Esp\Contract;
 
 use Esp\Kernel\Provider;
+use Exception;
 
 /**
  * Class Contract
@@ -14,7 +15,8 @@ class Contract extends Provider
 {
     /**
      * 合同基本信息（添加/新增）
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function C_InsertContractInfo()
     {
@@ -23,7 +25,8 @@ class Contract extends Provider
 
     /**
      * 合同补充说明附件（添加）
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function C_InsertContractSupply()
     {
@@ -32,7 +35,8 @@ class Contract extends Provider
 
     /**
      * 合同补充说明附件（删除）
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function C_DeleteContractSupply()
     {
@@ -41,7 +45,8 @@ class Contract extends Provider
 
     /**
      * 合同基本信息列表
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function C_GetALLContractList()
     {

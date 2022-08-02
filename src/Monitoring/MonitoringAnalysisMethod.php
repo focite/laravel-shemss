@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Esp\Monitoring;
 
 use Esp\Kernel\Provider;
+use Exception;
 
 /**
  * Class MonitoringAnalysisMethod
@@ -32,7 +33,8 @@ class MonitoringAnalysisMethod extends Provider
      * METHODID 监测方法 ID（后续任务中的分析方法 ID）
      * METHODNAME 监测方法
      *
-     * @return void
+     * @return array
+     * @throws Exception
      */
     public function M_MonitoringAnalysisMethod()
     {
