@@ -4,11 +4,15 @@ declare(strict_types=1);
 
 namespace Esp\Customer;
 
+use Esp\Kernel\Provider;
+use Esp\Support\XML;
+use Exception;
+
 /**
  * Class EntrustingParty
  * @package Esp\Customer
  */
-class EntrustingParty
+class EntrustingParty extends Provider
 {
     /**
      * 委托方列表
@@ -34,6 +38,11 @@ class EntrustingParty
      */
     public function C_PartyABasicDataList(): array
     {
-        return [];
+        $response = $this->soap->C_PartyABasicDataList();
+        $data = XML::parse($response->C_PartyABasicDataListResult->any);
+        if (isset($data['succes']) && $data['succes'] === 'False') {
+            throw new Exception($data['message']);
+        }
+        return $data['Item'];
     }
 }

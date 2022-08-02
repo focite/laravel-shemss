@@ -4,8 +4,11 @@ declare(strict_types=1);
 
 namespace Esp;
 
+use Esp\Customer\EntrustingParty;
+use Esp\Foundation\Attachment;
 use Esp\Foundation\Device;
 use Esp\Foundation\Region;
+use Esp\Foundation\Worker;
 
 class Application
 {
@@ -57,10 +60,13 @@ class Application
 
     /**
      * 人员信息列表
-     * @return void
+     * @return array
+     * @throws \Exception
      */
-    public function B_GetALLWorkersList()
+    public function B_GetALLWorkersList(): array
     {
+        $worker = new Worker($this->config());
+        return $worker->B_GetALLWorkersList();
     }
 
     /**
@@ -105,18 +111,24 @@ class Application
 
     /**
      * 委托方列表
-     * @return void
+     * @return array
+     * @throws \Exception
      */
-    public function C_PartyABasicDataList()
+    public function C_PartyABasicDataList(): array
     {
+        $entrustingParty = new EntrustingParty($this->config());
+        return $entrustingParty->C_PartyABasicDataList();
     }
 
     /**
      * 附件创建（1合同附件 2合同补充附件 3监测任务监测任务其他附件 4监测任务点位分布示意图 5监测任务方案附件 6监测任务采样补充说明文件 7监测任务检测报告 8监测任务数据报告（退回上阶段） 9监测任务采样图片）
-     * @return void
+     * @return string
+     * @throws \Exception
      */
-    public function CreateFile()
+    public function CreateFile(string $name, int $type): string
     {
+        $attachment = new Attachment($this->config());
+        return $attachment->CreateFile($name, $type);
     }
 
     /**

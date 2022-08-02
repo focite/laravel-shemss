@@ -4,13 +4,17 @@ declare(strict_types=1);
 
 namespace Esp\Foundation;
 
-class Attachment
+use Esp\Kernel\Provider;
+use Esp\Support\XML;
+use Exception;
+
+class Attachment extends Provider
 {
     /**
      * 附件创建
      *
-     * @param string $fileName 需上传文件的名称
-     * @param int $fileType 上传类型：
+     * @param string $name 需上传文件的名称
+     * @param int $type 上传类型：
      *
      * 1：合同附件
      * 2：合同补充附件
@@ -30,11 +34,18 @@ class Attachment
      * succes 执行结果：True 成功 False 失败
      * message 失败描述/成功返回接口生成文件名称
      *
-     * @return void
+     * @return string
+     * @throws Exception
      */
-    public function CreateFile(string $fileName, int $fileType)
+    public function CreateFile(string $name, int $type): string
     {
-
+        $params = ['fileName' => $name, 'fileType' => $type];
+        $response = $this->soap->__soapCall('CreateFile', [$params]);
+        $data = XML::parse($response->CreateFileResult->any);
+        if (isset($data['succes']) && $data['succes'] === 'False') {
+            throw new Exception($data['message']);
+        }
+        return $data['message'];
     }
 
     /**
