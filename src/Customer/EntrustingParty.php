@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Esp\Foundation;
+namespace Esp\Customer;
 
 /**
  * Class EntrustingParty
- * @package Esp\Foundation
+ * @package Esp\Customer
  */
 class EntrustingParty
 {

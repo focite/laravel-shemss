@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Esp\Support;
 
+/**
+ * Class AES
+ * @package Esp\Support
+ */
 class AES
 {
     /**

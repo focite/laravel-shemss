@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Esp\Kernel\Http;
 
 use Illuminate\Support\Collection;
@@ -7,6 +9,10 @@ use Esp\Support\XML;
 use GuzzleHttp\Psr7\Response as GuzzleResponse;
 use Psr\Http\Message\ResponseInterface;
 
+/**
+ * Class Response
+ * @package Esp\Kernel\Http
+ */
 class Response extends GuzzleResponse
 {
     /**

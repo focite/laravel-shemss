@@ -6,6 +6,10 @@ namespace Esp\Support;
 
 use SimpleXMLElement;
 
+/**
+ * Class XML
+ * @package Esp\Support
+ */
 class XML
 {
     /**

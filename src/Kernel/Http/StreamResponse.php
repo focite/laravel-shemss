@@ -1,11 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Esp\Kernel\Http;
 
 use Esp\Support\File;
 use InvalidArgumentException;
 use RuntimeException;
 
+/**
+ * Class StreamResponse
+ * @package Esp\Kernel\Http
+ */
 class StreamResponse extends Response
 {
     /**

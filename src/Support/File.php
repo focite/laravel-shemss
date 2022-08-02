@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Esp\Support;
 
+/**
+ * Class File
+ * @package Esp\Support
+ */
 class File
 {
     /**

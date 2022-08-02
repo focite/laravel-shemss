@@ -2,8 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Esp\Foundation;
+namespace Esp\Monitoring;
 
+/**
+ * Class MonitoringSamplingMethod
+ * @package Esp\Monitoring
+ */
 class MonitoringSamplingMethod
 {
     /**

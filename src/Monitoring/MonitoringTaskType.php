@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Esp\Foundation;
+namespace Esp\Monitoring;
 
 /**
  * Class MonitoringTaskType
- * @package Esp\Foundation
+ * @package Esp\Monitoring
  */
 class MonitoringTaskType
 {
