@@ -28,7 +28,7 @@ class OperationDetail
      *
      * @return void
      */
-    public function detail()
+    public function M_GetOperationDetailList()
     {
 
     }

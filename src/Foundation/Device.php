@@ -31,7 +31,7 @@ class Device
      *
      * @return void
      */
-    public function all()
+    public function B_GetALLDevicesList()
     {
 
     }

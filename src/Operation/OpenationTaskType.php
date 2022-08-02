@@ -28,7 +28,7 @@ class OpenationTaskType
      *
      * @return void
      */
-    public function all()
+    public function M_OpenationTaskType()
     {
 
     }

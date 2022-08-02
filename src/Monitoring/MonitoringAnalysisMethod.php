@@ -32,7 +32,7 @@ class MonitoringAnalysisMethod
      *
      * @return void
      */
-    public function all()
+    public function M_MonitoringAnalysisMethod()
     {
 
     }

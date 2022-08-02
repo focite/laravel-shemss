@@ -25,7 +25,7 @@ class MonitoringTaskType
      * Item 类别名称
      * @return void
      */
-    public function all()
+    public function M_MonitoringTaskType()
     {
 
     }

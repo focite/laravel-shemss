@@ -32,7 +32,7 @@ class Attachment
      *
      * @return void
      */
-    public function create(string $fileName, int $fileType)
+    public function CreateFile(string $fileName, int $fileType)
     {
 
     }
@@ -63,7 +63,7 @@ class Attachment
      *
      * @return void
      */
-    public function append(string $fileNameNew, int $fileType, $buffer)
+    public function AppendFile(string $fileNameNew, int $fileType, $buffer)
     {
 
     }
@@ -105,7 +105,7 @@ class Attachment
      *
      * @return void
      */
-    public function verify(string $fileNameNew, int $fileType, string $md5)
+    public function VerifyFile(string $fileNameNew, int $fileType, string $md5)
     {
 
     }

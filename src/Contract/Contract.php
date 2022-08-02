@@ -14,16 +14,7 @@ class Contract
      * 合同基本信息（添加/新增）
      * @return void
      */
-    public function insertContract()
-    {
-
-    }
-
-    /**
-     * @return void
-     * @deprecated
-     */
-    public function removeContract()
+    public function C_InsertContractInfo()
     {
 
     }
@@ -32,7 +23,7 @@ class Contract
      * 合同补充说明附件（添加）
      * @return void
      */
-    public function insertContractSupply()
+    public function C_InsertContractSupply()
     {
 
     }
@@ -41,7 +32,7 @@ class Contract
      * 合同补充说明附件（删除）
      * @return void
      */
-    public function deleteContractSupply()
+    public function C_DeleteContractSupply()
     {
 
     }
@@ -50,7 +41,7 @@ class Contract
      * 合同基本信息列表
      * @return void
      */
-    public function contractList()
+    public function C_GetALLContractList()
     {
 
     }

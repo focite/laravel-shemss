@@ -32,7 +32,7 @@ class EntrustingParty
      * FRDB 法人
      * @return array
      */
-    public function all(): array
+    public function C_PartyABasicDataList(): array
     {
         return [];
     }

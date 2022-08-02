@@ -35,7 +35,7 @@ class OperationScheme
      *
      * @return void
      */
-    public function scheme()
+    public function M_GetOperationSchemeList()
     {
 
     }

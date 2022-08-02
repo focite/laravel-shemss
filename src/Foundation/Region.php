@@ -24,7 +24,7 @@ class Region
      *
      * @return array
      */
-    public function all(): array
+    public function Z_CityInfo(): array
     {
         return [];
     }

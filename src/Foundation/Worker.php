@@ -35,7 +35,7 @@ class Worker
      *
      * @return void
      */
-    public function all()
+    public function B_GetALLWorkersList()
     {
 
     }

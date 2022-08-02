@@ -14,7 +14,7 @@ class MonitoringTask
      * 委托任务申请（添加/编辑）
      * @return void
      */
-    public function insertMonitoringTask()
+    public function M_InsertMonitoringTask()
     {
 
     }
@@ -23,7 +23,7 @@ class MonitoringTask
      * 监测任务信息（进行中）
      * @return void
      */
-    public function getALLMonitorTask()
+    public function M_GetALLMonitorTask()
     {
         // M_GetALLMonitorTask
     }
@@ -32,7 +32,7 @@ class MonitoringTask
      * 监测任务信息（已完结）
      * @return void
      */
-    public function done()
+    public function M_GetDoneMonitorTask()
     {
         // M_GetDoneMonitorTask (最近一周完结任务)
     }

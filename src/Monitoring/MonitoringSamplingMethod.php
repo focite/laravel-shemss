@@ -25,7 +25,7 @@ class MonitoringSamplingMethod
      *
      * @return void
      */
-    public function all()
+    public function M_MonitoringSamplingMethod()
     {
 
     }
