@@ -20,12 +20,47 @@ class MonitoringTask
     }
 
     /**
-     * 方案编制（新增）(单个任务执行)
-     * 建议方案全部编制完成后一起提交或按点位进行提交；任务只能在方案编制阶段进行新增
+     * 监测任务信息（进行中）
      * @return void
      */
-    public function insertMonitorTaskPlan()
+    public function getALLMonitorTask()
     {
+        // M_GetALLMonitorTask
+    }
 
+    /**
+     * 监测任务信息（已完结）
+     * @return void
+     */
+    public function done()
+    {
+        // M_GetDoneMonitorTask (最近一周完结任务)
+    }
+
+    /**
+     * 监测任务（方案信息）
+     * @return void
+     */
+    public function M_GetMonitorTaskSchemeByMTID()
+    {
+        
+    }
+
+    /**
+     * 监测任务（检测报告）列表
+     * @return void
+     */
+    public function M_GetUReportList()
+    {
+        
+    }
+
+    /**
+     * 监测任务（补传申请）列表
+     * @return void
+     */
+    public function M_GetReportApply()
+    {
+        
     }
 }
