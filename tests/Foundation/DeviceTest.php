@@ -10,8 +10,8 @@ class DeviceTest extends TestCase
 
     public function testB_GetALLDevicesList()
     {
-        $application = new Application('', '');
-        $data = $application->device()->B_GetALLDevicesList();
+        $app = new Application('', '');
+        $data = $app->B_GetALLDevicesList();
         $this->assertIsArray($data, 'ok');
     }
 }

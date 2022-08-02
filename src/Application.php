@@ -4,19 +4,8 @@ declare(strict_types=1);
 
 namespace Esp;
 
-use Esp\Contract\Contract;
-use Esp\Customer\EntrustingParty;
-use Esp\Foundation\Attachment;
 use Esp\Foundation\Device;
 use Esp\Foundation\Region;
-use Esp\Foundation\Worker;
-use Esp\Monitoring\MonitoringAnalysisMethod;
-use Esp\Monitoring\MonitoringSamplingMethod;
-use Esp\Monitoring\MonitoringTask;
-use Esp\Monitoring\MonitoringTaskType;
-use Esp\Operation\OpenationTaskType;
-use Esp\Operation\OperationDetail;
-use Esp\Operation\OperationScheme;
 
 class Application
 {
@@ -48,122 +37,562 @@ class Application
     }
 
     /**
-     * 委托方
-     * @return EntrustingParty
+     * 附件断点上传（1合同附件 2合同补充附件 3监测任务监测任务其他附件 4监测任务点位分布示意图 5监测任务方案附件 6监测任务采样补充说明文件 7监测任务检测报告 8监测任务数据报告（退回上阶段） 9监测任务采样图片）
+     * @return void
      */
-    public function entrustingParty(): EntrustingParty
+    public function AppendFile()
     {
-        return new EntrustingParty($this->config());
     }
 
     /**
-     * 行政区域
-     * @return Region
+     * 设备信息列表
+     * @return array
+     * @throws \Exception
      */
-    public function region(): Region
+    public function B_GetALLDevicesList(): array
     {
-        return new Region($this->config());
+        $device = new Device($this->config());
+        return $device->B_GetALLDevicesList();
     }
 
     /**
-     * 人员信息
-     * @return Worker
+     * 人员信息列表
+     * @return void
      */
-    public function worker(): Worker
+    public function B_GetALLWorkersList()
     {
-        return new Worker($this->config());
     }
 
     /**
-     * 设备信息
-     * @return Device
+     * 合同基本信息（删除）
+     * @return void
      */
-    public function device(): Device
+    public function C_DeleteContractInfo()
     {
-        return new Device($this->config());
     }
 
     /**
-     * 监测任务类型
-     * @return MonitoringTaskType
+     * 合同补充说明附件（删除）
+     * @return void
      */
-    public function monitoringTaskType(): MonitoringTaskType
+    public function C_DeleteContractSupply()
     {
-        return new MonitoringTaskType($this->config());
+    }
+
+    /**
+     * 合同基本信息列表
+     * @return void
+     */
+    public function C_GetALLContractList()
+    {
+    }
+
+    /**
+     * 合同基本信息（添加/新增）
+     * @return void
+     */
+    public function C_InsertContractInfo()
+    {
+    }
+
+    /**
+     * 合同补充说明附件（添加）
+     * @return void
+     */
+    public function C_InsertContractSupply()
+    {
+    }
+
+    /**
+     * 委托方列表
+     * @return void
+     */
+    public function C_PartyABasicDataList()
+    {
+    }
+
+    /**
+     * 附件创建（1合同附件 2合同补充附件 3监测任务监测任务其他附件 4监测任务点位分布示意图 5监测任务方案附件 6监测任务采样补充说明文件 7监测任务检测报告 8监测任务数据报告（退回上阶段） 9监测任务采样图片）
+     * @return void
+     */
+    public function CreateFile()
+    {
+    }
+
+    /**
+     * 采样计划（计划采样设备）
+     * @return void
+     */
+    public function M_AddDeivces()
+    {
+    }
+
+    /**
+     * 运维报告（新增/编辑）
+     * @return void
+     */
+    public function M_AddOperationTaskReport()
+    {
+    }
+
+    /**
+     * 数据报告（检测报告新增/编辑）
+     * @return void
+     */
+    public function M_AddUReport()
+    {
+    }
+
+    /**
+     * 采样计划（计划采样人员）
+     * @return void
+     */
+    public function M_AddWorkers()
+    {
+    }
+
+    /**
+     * 数据报告（退回上阶段）
+     * @return void
+     */
+    public function M_Back()
+    {
+    }
+
+    /**
+     * 运维报告（删除）
+     * @return void
+     */
+    public function M_DelOperationTaskReport()
+    {
+    }
+
+    /**
+     * 方案编制（采样任务删除）
+     * @return void
+     */
+    public function M_DelPlan()
+    {
+    }
+
+    /**
+     * 方案编制（方案点位删除）
+     * @return void
+     */
+    public function M_DelScheme()
+    {
+    }
+
+    /**
+     * 数据报告（检测报告删除）
+     * @return void
+     */
+    public function M_DelUReport()
+    {
+    }
+
+    /**
+     * 方案编制（采样任务新增/编辑）strXmlPlan XML字符串
+     * @return void
+     */
+    public function M_EditPlan()
+    {
+    }
+
+    /**
+     * 方案编制（采样任务新增/编辑）strXmlPlan XML对象
+     * @return void
+     */
+    public function M_EditPlanXML()
+    {
+    }
+
+    /**
+     * 方案编制（方案点位编辑）
+     * @return void
+     */
+    public function M_EditScheme()
+    {
+    }
+
+    /**
+     * 数据报告（完结）
+     * @return void
+     */
+    public function M_EndAnalysis()
+    {
+    }
+
+    /**
+     * 采样管理（完结）
+     * @return void
+     */
+    public function M_EndSamp()
+    {
+    }
+
+    /**
+     * 监测任务信息（进行中）
+     * @return void
+     */
+    public function M_GetALLMonitorTask()
+    {
+    }
+
+    /**
+     * 运维任务信息列表（进行中）
+     * @return void
+     */
+    public function M_GetALLOperationTask()
+    {
+    }
+
+    /**
+     * 监测任务信息（已完结）(最近一周)
+     * @return void
+     */
+    public function M_GetDoneMonitorTask()
+    {
+    }
+
+    /**
+     * 监测任务信息（进行中）,根据任务编号查询
+     * @return void
+     */
+    public function M_GetMonitorTaskByRWBH()
+    {
+    }
+
+    /**
+     * 监测任务（方案信息）
+     * @return void
+     */
+    public function M_GetMonitorTaskSchemeByMTID()
+    {
+    }
+
+    /**
+     * 运维内容列表
+     * @return void
+     */
+    public function M_GetOperationDetailList()
+    {
+    }
+
+    /**
+     * 运维点位列表
+     * @return void
+     */
+    public function M_GetOperationSchemeList()
+    {
+    }
+
+    /**
+     * 运维任务信息（进行中）
+     * @return void
+     */
+    public function M_GetOperationTaskByID()
+    {
+    }
+
+    /**
+     * 运维任务信息列表（已完结）（最近一周）
+     * @return void
+     */
+    public function M_GetOperationTaskDone()
+    {
+    }
+
+    /**
+     * 运维任务计划周期列表（进行中）
+     * @return void
+     */
+    public function M_GetOperationTaskPlanList()
+    {
+    }
+
+    /**
+     * 采样计划（计划清单列表）
+     * @return void
+     */
+    public function M_GetPlanList()
+    {
+    }
+
+    /**
+     * 监测任务（补传申请）列表
+     * @return void
+     */
+    public function M_GetReportApply()
+    {
+    }
+
+    /**
+     * 数据报告（生成系统编号）
+     * @return void
+     */
+    public function M_GetReportNum()
+    {
+    }
+
+    /**
+     * 监测任务（检测报告）列表
+     * @return void
+     */
+    public function M_GetUReportList()
+    {
+    }
+
+    /**
+     * 方案编制（相关附件）(4点位分布示意图 5方案附件)
+     * @return void
+     */
+    public function M_InsertMonitorTaskFile()
+    {
+    }
+
+    /**
+     * 方案编制（新增）(单个任务执行) strXmlPlan XML字符串
+     * @return void
+     */
+    public function M_InsertMonitorTaskPlan()
+    {
+    }
+
+    /**
+     * 方案编制（新增）(单个任务执行) strXmlPlan XML对象
+     * @return void
+     */
+    public function M_InsertMonitorTaskPlanXML()
+    {
+    }
+
+    /**
+     * 委托任务申请（添加/编辑）
+     * @return void
+     */
+    public function M_InsertMonitoringTask()
+    {
+    }
+
+    /**
+     * 运维任务基础信息（新增/编辑）
+     * @return void
+     */
+    public function M_InsertOperationTask()
+    {
+    }
+
+    /**
+     * 运维任务设备（新增） strXmlPlan XML字符串
+     * @return void
+     */
+    public function M_InsertOperationTaskDevices()
+    {
+    }
+
+    /**
+     * 运维任务设备（新增） strXmlPlan XML对象
+     * @return void
+     */
+    public function M_InsertOperationTaskDevicesXML()
+    {
+    }
+
+    /**
+     * 运维任务计划（新增） strXmlPlan XML字符串
+     * @return void
+     */
+    public function M_InsertOperationTaskPlan()
+    {
+    }
+
+    /**
+     * 运维记录上传
+     * @return void
+     */
+    public function M_InsertOperationTaskPlanLog()
+    {
+    }
+
+    /**
+     * 运维任务计划（新增） strXmlPlan XML对象
+     * @return void
+     */
+    public function M_InsertOperationTaskPlanXML()
+    {
+    }
+
+    /**
+     * 运维任务点位（新增） strXmlPlan XML字符串
+     * @return void
+     */
+    public function M_InsertOperationTaskScheme()
+    {
+    }
+
+    /**
+     * 运维任务点位（新增）strXmlPlan XML对象
+     * @return void
+     */
+    public function M_InsertOperationTaskSchemeXML()
+    {
+    }
+
+    /**
+     * 运维任务人员（新增） strXmlPlan XML字符串
+     * @return void
+     */
+    public function M_InsertOperationTaskWorkers()
+    {
+    }
+
+    /**
+     * 运维任务人员（新增） strXmlPlan XML对象
+     * @return void
+     */
+    public function M_InsertOperationTaskWorkersXML()
+    {
+    }
+
+    /**
+     * 采样管理（采样记录上传）strXmlPlan XML字符串
+     * @return void
+     */
+    public function M_InsertPlanLog()
+    {
+    }
+
+    /**
+     * 采样管理（采样记录上传）strXmlPlan XML对象
+     * @return void
+     */
+    public function M_InsertPlanLogXML()
+    {
+    }
+
+    /**
+     * 采样管理（补充说明附件）
+     * @return void
+     */
+    public function M_InsertSampSupply()
+    {
     }
 
     /**
      * 分析方法
-     * @return MonitoringAnalysisMethod
+     * @return void
      */
-    public function monitoringAnalysisMethod(): MonitoringAnalysisMethod
+    public function M_MonitoringAnalysisMethod()
     {
-        return new MonitoringAnalysisMethod($this->config());
     }
 
     /**
      * 采样方法
-     * @return MonitoringSamplingMethod
+     * @return void
      */
-    public function monitoringSamplingMethod(): MonitoringSamplingMethod
+    public function M_MonitoringSamplingMethod()
     {
-        return new MonitoringSamplingMethod($this->config());
     }
 
     /**
-     * 监测任务
-     * @return MonitoringTask
+     * 监测任务类别
+     * @return void
      */
-    public function monitoringTask(): MonitoringTask
+    public function M_MonitoringTaskType()
     {
-        return new MonitoringTask($this->config());
     }
 
     /**
-     * 运维任务类型
-     * @return OpenationTaskType
+     * 运维任务类别
+     * @return void
      */
-    public function openationTaskType(): OpenationTaskType
+    public function M_OpenationTaskType()
     {
-        return new OpenationTaskType($this->config());
     }
 
     /**
-     * 运维点位
-     * @return OperationScheme
+     * 运维报告（异常中止）
+     * @return void
      */
-    public function operationScheme(): OperationScheme
+    public function M_OperationTaskAbortEnd()
     {
-        return new OperationScheme($this->config());
     }
 
     /**
-     * 运维内容
-     * @return OperationDetail
+     * 运维报告（完结）
+     * @return void
      */
-    public function operationDetail(): OperationDetail
+    public function M_OperationTaskEnd()
     {
-        return new OperationDetail($this->config());
     }
 
     /**
-     * 附件
-     * @return Attachment
+     * 运维任务提交
+     * @return void
      */
-    public function attachment(): Attachment
+    public function M_SubmitOperationTask()
     {
-        return new Attachment($this->config());
     }
 
     /**
-     * 合同
-     * @return Contract
+     * 方案编制（提交）
+     * @return void
      */
-    public function contract(): Contract
+    public function M_SubmitPlan()
     {
-        return new Contract($this->config());
     }
 
+    /**
+     * 采样管理（提交）
+     * @return void
+     */
+    public function M_SubmitSamp()
+    {
+    }
+
+    /**
+     * 采样计划（提交）
+     * @return void
+     */
+    public function M_SubmitSchedule()
+    {
+    }
+
+    /**
+     * 采样计划（计划采样日期） strXmlPlan XML字符串
+     * @return void
+     */
+    public function M_UpdatePlanTime()
+    {
+    }
+
+    /**
+     * 采样计划（计划采样日期）strXmlPlan XML对象
+     * @return void
+     */
+    public function M_UpdatePlanTimeXML()
+    {
+    }
+
+    /**
+     * 附件校验（1合同附件 2合同补充附件 3监测任务监测任务其他附件 4监测任务点位分布示意图 5监测任务方案附件 6监测任务采样补充说明文件 7监测任务检测报告 8监测任务数据报告（退回上阶段） 9监测任务采样图片）
+     * @return void
+     */
+    public function VerifyFile()
+    {
+    }
+
+    /**
+     * 行政区域字典表
+     * @return array
+     * @throws \Exception
+     */
+    public function Z_CityInfo(): array
+    {
+        $region = new Region($this->config());
+        return $region->Z_CityInfo();
+    }
 
     /**
      * @return array
