@@ -16,12 +16,6 @@ class EntrustingParty extends Provider
 {
     /**
      * 委托方列表
-     *
-     * ID 委托方 ID
-     * XYDM 统一信用代码
-     * YYZZBH 营业执照编号
-     * QYMC 企业名称
-     * FRDB 法人
      * @return array
      * @throws Exception
      */

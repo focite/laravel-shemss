@@ -15,7 +15,6 @@ class Attachment extends Provider
      *
      * @param string $name 需上传文件的名称
      * @param int $type 上传类型：
-     *
      * 1：合同附件
      * 2：合同补充附件
      * 3：监测任务其他附件
@@ -25,14 +24,6 @@ class Attachment extends Provider
      * 7：监测任务检测报告
      * 8：监测任务数据报告（退回上阶段）
      * 9：监测任务采样图片
-     *
-     * <ResultStruct>
-     * <succes>True</succes>
-     * <message>201910201443298142.pdf</message>
-     * </ResultStruct>
-     *
-     * succes 执行结果：True 成功 False 失败
-     * message 失败描述/成功返回接口生成文件名称
      *
      * @return string
      * @throws Exception
@@ -64,19 +55,18 @@ class Attachment extends Provider
      * 9：监测任务采样图片
      * @param $buffer 文件流（byte[]）或 base64
      *
-     * <ResultStruct>
-     * <succes>True</succes>
-     * <message>成功！</message>
-     * </ResultStruct>
-     *
-     * succes 执行结果：True 成功 False 失败
-     * message 描述
-     *
-     * @return void
+     * @return bool
+     * @throws Exception
      */
-    public function AppendFile(string $fileNameNew, int $fileType, $buffer)
+    public function AppendFile(string $fileNameNew, int $fileType, $buffer): bool
     {
-
+        $params = ['fileNameNew' => $fileNameNew, 'fileType' => $fileType, 'buffer' => $buffer];
+        $response = $this->soap->__soapCall('AppendFile', [$params]);
+        $data = XML::parse($response->AppendFileResult->any);
+        if (isset($data['succes']) && $data['succes'] === 'False') {
+            throw new Exception($data['message']);
+        }
+        return true;
     }
 
     /**
@@ -106,18 +96,17 @@ class Attachment extends Provider
      * }
      * return md5Str;
      *
-     * <ResultStruct>
-     * <succes>True</succes>
-     * <message>上传成功！</message>
-     * </ResultStruct>
-     *
-     * succes 执行结果：True 成功 False 失败
-     * message 描述
-     *
-     * @return void
+     * @return bool
+     * @throws Exception
      */
-    public function VerifyFile(string $fileNameNew, int $fileType, string $md5)
+    public function VerifyFile(string $fileNameNew, int $fileType, string $md5): bool
     {
-
+        $params = ['fileNameNew' => $fileNameNew, 'fileType' => $fileType, 'md5' => $md5];
+        $response = $this->soap->__soapCall('VerifyFile', [$params]);
+        $data = XML::parse($response->VerifyFileResult->any);
+        if (isset($data['succes']) && $data['succes'] === 'False') {
+            throw new Exception($data['message']);
+        }
+        return true;
     }
 }
