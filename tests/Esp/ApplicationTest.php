@@ -117,7 +117,8 @@ class ApplicationTest extends TestCase
 
     public function testC_GetALLContractList()
     {
-        $this->assertIsBool(0);
+        $data = $this->app->C_GetALLContractList();
+        $this->assertIsArray($data, 'ok');
     }
 
     public function testM_InsertOperationTaskPlan()

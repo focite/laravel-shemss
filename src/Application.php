@@ -4,11 +4,14 @@ declare(strict_types=1);
 
 namespace Esp;
 
+use Esp\Contract\Contract;
+use Esp\Contract\ContractInput;
 use Esp\Customer\EntrustingParty;
 use Esp\Foundation\Attachment;
 use Esp\Foundation\Device;
 use Esp\Foundation\Region;
 use Esp\Foundation\Worker;
+use Exception;
 
 class Application
 {
@@ -79,34 +82,51 @@ class Application
 
     /**
      * 合同补充说明附件（删除）
-     * @return void
+     * @param int $supply_id 补充说明编号 ID
+     * @return bool
+     * @throws Exception
      */
-    public function C_DeleteContractSupply()
+    public function C_DeleteContractSupply(int $supply_id): bool
     {
+        $contract = new Contract($this->config());
+        return $contract->C_DeleteContractSupply($supply_id);
     }
 
     /**
      * 合同基本信息列表
-     * @return void
+     * @return array
+     * @throws Exception
      */
-    public function C_GetALLContractList()
+    public function C_GetALLContractList():array
     {
+        $contract = new Contract($this->config());
+        return $contract->C_GetALLContractList();
     }
 
     /**
      * 合同基本信息（添加/新增）
-     * @return void
+     * @param ContractInput $contractInput
+     * @return int
+     * @throws Exception
      */
-    public function C_InsertContractInfo()
+    public function C_InsertContractInfo(ContractInput $contractInput): int
     {
+        $contract = new Contract($this->config());
+        return $contract->C_InsertContractInfo($contractInput);
     }
 
     /**
      * 合同补充说明附件（添加）
-     * @return void
+     * @param int $cid 合同 ID
+     * @param string $fileName 附件原名称
+     * @param string $fileNameOld 附件接口返回名称
+     * @return bool
+     * @throws Exception
      */
-    public function C_InsertContractSupply()
+    public function C_InsertContractSupply(int $cid, string $fileName, string $fileNameOld): bool
     {
+        $contract = new Contract($this->config());
+        return $contract->C_InsertContractSupply($cid, $fileName, $fileNameOld);
     }
 
     /**
