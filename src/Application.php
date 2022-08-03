@@ -43,11 +43,26 @@ class Application
     }
 
     /**
-     * 附件断点上传（1合同附件 2合同补充附件 3监测任务监测任务其他附件 4监测任务点位分布示意图 5监测任务方案附件 6监测任务采样补充说明文件 7监测任务检测报告 8监测任务数据报告（退回上阶段） 9监测任务采样图片）
-     * @return void
+     * 附件断点上传
+     * @param string $fileNameNew 附件创建接口成功返回文件名称
+     * @param int $fileType 上传类型：
+     * 1：合同附件
+     * 2：合同补充附件
+     * 3：监测任务其他附件
+     * 4：监测任务点位分布示意图
+     * 5：监测任务方案附件
+     * 6：监测任务采样补充说明文件
+     * 7：监测任务检测报告
+     * 8：监测任务数据报告（退回上阶段）
+     * 9：监测任务采样图片
+     * @param $buffer 文件流 byte[]或 base64
+     * @return bool
+     * @throws Exception
      */
-    public function AppendFile()
+    public function AppendFile(string $fileNameNew, int $fileType, $buffer): bool
     {
+        $attachment = new Attachment($this->config());
+        return $attachment->AppendFile($fileNameNew, $fileType, $buffer);
     }
 
     /**
@@ -142,7 +157,20 @@ class Application
     }
 
     /**
-     * 附件创建（1合同附件 2合同补充附件 3监测任务监测任务其他附件 4监测任务点位分布示意图 5监测任务方案附件 6监测任务采样补充说明文件 7监测任务检测报告 8监测任务数据报告（退回上阶段） 9监测任务采样图片）
+     * 附件创建
+     *
+     * @param string $name 需上传文件的名称
+     * @param int $type 上传类型：
+     * 1：合同附件
+     * 2：合同补充附件
+     * 3：监测任务其他附件
+     * 4：监测任务点位分布示意图
+     * 5：监测任务方案附件
+     * 6：监测任务采样补充说明文件
+     * 7：监测任务检测报告
+     * 8：监测任务数据报告（退回上阶段）
+     * 9：监测任务采样图片
+     *
      * @return string
      * @throws Exception
      */
