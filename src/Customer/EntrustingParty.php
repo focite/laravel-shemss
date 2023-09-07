@@ -2,16 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Esp\Customer;
+namespace Focite\Shemss\Customer;
 
-use Esp\Kernel\Provider;
-use Esp\Support\XML;
+use Focite\Shemss\Kernel\Provider;
+use Focite\Shemss\Support\XML;
 use Exception;
 
-/**
- * Class EntrustingParty
- * @package Esp\Customer
- */
 class EntrustingParty extends Provider
 {
     /**

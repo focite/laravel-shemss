@@ -2,12 +2,8 @@
 
 declare(strict_types=1);
 
-namespace Esp\Contract;
+namespace Focite\Shemss\Contract;
 
-/**
- * Class ContractInput
- * @package Esp\Contract
- */
 class ContractInput
 {
     /**

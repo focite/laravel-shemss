@@ -2,12 +2,8 @@
 
 declare(strict_types=1);
 
-namespace Esp\Support;
+namespace Focite\Shemss\Support;
 
-/**
- * Class AES
- * @package Esp\Support
- */
 class AES
 {
     /**

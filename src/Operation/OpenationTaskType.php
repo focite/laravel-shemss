@@ -2,16 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Esp\Operation;
+namespace Focite\Shemss\Operation;
 
-use Esp\Kernel\Provider;
-use Esp\Support\XML;
+use Focite\Shemss\Kernel\Provider;
+use Focite\Shemss\Support\XML;
 use Exception;
 
-/**
- * Class OpenationTaskType
- * @package Esp\Operation
- */
 class OpenationTaskType extends Provider
 {
     /**

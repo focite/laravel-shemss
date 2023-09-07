@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Esp\Foundation;
+namespace Focite\Shemss\Foundation;
 
-use Esp\Kernel\Provider;
-use Esp\Support\XML;
+use Focite\Shemss\Kernel\Provider;
+use Focite\Shemss\Support\XML;
 use Exception;
 
 class Attachment extends Provider

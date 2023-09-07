@@ -2,15 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Esp\Monitoring;
+namespace Focite\Shemss\Monitoring;
 
-use Esp\Kernel\Provider;
+use Focite\Shemss\Kernel\Provider;
 use Exception;
 
-/**
- * Class MonitoringSamplingMethod
- * @package Esp\Monitoring
- */
 class MonitoringSamplingMethod extends Provider
 {
     /**

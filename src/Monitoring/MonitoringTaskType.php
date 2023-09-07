@@ -2,16 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Esp\Monitoring;
+namespace Focite\Shemss\Monitoring;
 
-use Esp\Kernel\Provider;
-use Esp\Support\XML;
+use Focite\Shemss\Kernel\Provider;
+use Focite\Shemss\Support\XML;
 use Exception;
 
-/**
- * Class MonitoringTaskType
- * @package Esp\Monitoring
- */
 class MonitoringTaskType extends Provider
 {
     /**

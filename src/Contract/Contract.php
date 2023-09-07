@@ -2,16 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Esp\Contract;
+namespace Focite\Shemss\Contract;
 
-use Esp\Kernel\Provider;
-use Esp\Support\XML;
+use Focite\Shemss\Kernel\Provider;
+use Focite\Shemss\Support\XML;
 use Exception;
 
-/**
- * Class Contract
- * @package Esp\Contract
- */
 class Contract extends Provider
 {
     /**

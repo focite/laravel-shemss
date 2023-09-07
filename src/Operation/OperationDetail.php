@@ -2,15 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Esp\Operation;
+namespace Focite\Shemss\Operation;
 
-use Esp\Kernel\Provider;
+use Focite\Shemss\Kernel\Provider;
 use Exception;
 
-/**
- * Class OperationDetail
- * @package Esp\Operation
- */
 class OperationDetail extends Provider
 {
 

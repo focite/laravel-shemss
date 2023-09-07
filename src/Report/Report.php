@@ -2,13 +2,11 @@
 
 namespace Esp\Report;
 
-use Esp\Kernel\Provider;
+use Focite\Shemss\Kernel\Provider;
 use Exception;
 
 /**
  * 3.4.5 数据报告
- * Class Report
- * @package Esp\Report
  */
 class Report extends Provider
 {

@@ -2,14 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Esp\Support;
+namespace Focite\Shemss\Support;
 
 use SimpleXMLElement;
 
-/**
- * Class XML
- * @package Esp\Support
- */
 class XML
 {
     /**

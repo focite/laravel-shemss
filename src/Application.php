@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Esp;
+namespace Focite\Shemss;
 
-use Esp\Contract\Contract;
-use Esp\Contract\ContractInput;
-use Esp\Customer\EntrustingParty;
-use Esp\Foundation\Attachment;
-use Esp\Foundation\Device;
-use Esp\Foundation\Region;
-use Esp\Foundation\Worker;
+use Focite\Shemss\Contract\Contract;
+use Focite\Shemss\Contract\ContractInput;
+use Focite\Shemss\Customer\EntrustingParty;
+use Focite\Shemss\Foundation\Attachment;
+use Focite\Shemss\Foundation\Device;
+use Focite\Shemss\Foundation\Region;
+use Focite\Shemss\Foundation\Worker;
 use Exception;
 
 class Application

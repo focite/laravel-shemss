@@ -1,14 +1,12 @@
 <?php
 
-namespace Esp\Monitoring;
+namespace Focite\Shemss\Monitoring;
 
-use Esp\Kernel\Provider;
+use Focite\Shemss\Kernel\Provider;
 use Exception;
 
 /**
  * 3.4.2 方案编制
- * Class MonitoringTaskPlan
- * @package Esp\Monitoring
  */
 class MonitoringTaskPlan extends Provider
 {

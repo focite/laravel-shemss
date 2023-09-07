@@ -2,14 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Esp\Kernel;
+namespace Focite\Shemss\Kernel;
 
 use SoapClient;
 
-/**
- * Class Provider
- * @package Esp\Kernel
- */
 class Provider
 {
     /**
